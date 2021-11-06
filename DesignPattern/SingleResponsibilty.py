@@ -16,6 +16,30 @@ class Journal:
     def __str__(self):
         return "\n".join(self.entries)
 
+    #Secondary responsibility added, which is a bad idea.
+    # def save(self, filename):
+    #     file = open(filename, "w")
+    #     file.write(str(self))
+    #     file.close()
+    #
+    # def load(self, filename):
+    #     pass
+    #
+    # def low_from_web(self):
+    #     pass
+
+
+class PersistenceManager:
+    @staticmethod
+    def save_to_file(journal, filename):#functions are using lower alphabets with underscores
+        file = open(filename, "w")
+        file.write(str(journal))
+        file.close()
+
+
+#Anti-pattern: God objects
+#Single Responsibility prevents you from implementing it.
+
 
 j = Journal()
 j.add_entry("I exercised today.")

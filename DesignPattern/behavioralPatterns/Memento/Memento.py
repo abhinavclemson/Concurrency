@@ -1,6 +1,16 @@
 from unittest import *
 from copy import deepcopy
 
+"""
+Memento:
+    A token/handle representing the system state.
+    lets us roll back to the previous changes or when the token was generated.
+    May or may not directly expose state information
+    Basically keeping snapshots of the state.
+
+
+
+"""
 
 class Token:
     def __init__(self, value=0):
